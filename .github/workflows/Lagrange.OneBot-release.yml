@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  GH_TOKEN: ${{ github.token }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   delete-tag:
@@ -45,13 +45,7 @@ jobs:
       matrix:
         runtimeIdentifier:
           [
-            win-x64,
-            win-x86,
-            linux-x64,
-            linux-arm,
-            linux-arm64,
-            osx-x64,
-            osx-arm64
+            win-x64
           ]
 
     steps:
